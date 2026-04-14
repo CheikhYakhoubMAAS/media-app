@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { Activity, Menu, X } from 'lucide-react';
 
 const Navbar = () => {
@@ -17,11 +17,11 @@ const Navbar = () => {
           </Link>
 
           <div className="hidden md:flex items-center space-x-6">
-            <Link to="/" className="text-gray-300 hover:text-brand-mint transition-colors px-2 py-2 text-xs font-semibold uppercase tracking-wide">Accueil</Link>
-            <Link to="/services" className="text-gray-300 hover:text-brand-mint transition-colors px-2 py-2 text-xs font-semibold uppercase tracking-wide">Services</Link>
-            <Link to="/solutions" className="text-gray-300 hover:text-brand-mint transition-colors px-2 py-2 text-xs font-semibold uppercase tracking-wide">Solutions</Link>
-            <Link to="/ressources" className="text-gray-300 hover:text-brand-mint transition-colors px-2 py-2 text-xs font-semibold uppercase tracking-wide">Ressources</Link>
-            <Link to="/contact" className="text-gray-300 hover:text-brand-mint transition-colors px-2 py-2 text-xs font-semibold uppercase tracking-wide">Contact</Link>
+            <NavLink to="/" className={({ isActive }) => `transition-colors px-2 py-2 text-xs uppercase tracking-wide ${isActive ? 'text-brand-mint font-bold' : 'text-gray-300 hover:text-brand-mint font-semibold'}`}>Accueil</NavLink>
+            <NavLink to="/services" className={({ isActive }) => `transition-colors px-2 py-2 text-xs uppercase tracking-wide ${isActive ? 'text-brand-mint font-bold' : 'text-gray-300 hover:text-brand-mint font-semibold'}`}>Services</NavLink>
+            <NavLink to="/solutions" className={({ isActive }) => `transition-colors px-2 py-2 text-xs uppercase tracking-wide ${isActive ? 'text-brand-mint font-bold' : 'text-gray-300 hover:text-brand-mint font-semibold'}`}>Solutions</NavLink>
+            <NavLink to="/ressources" className={({ isActive }) => `transition-colors px-2 py-2 text-xs uppercase tracking-wide ${isActive ? 'text-brand-mint font-bold' : 'text-gray-300 hover:text-brand-mint font-semibold'}`}>Ressources</NavLink>
+            <NavLink to="/contact" className={({ isActive }) => `transition-colors px-2 py-2 text-xs uppercase tracking-wide ${isActive ? 'text-brand-mint font-bold' : 'text-gray-300 hover:text-brand-mint font-semibold'}`}>Contact</NavLink>
           </div>
 
           <div className="md:flex flex items-center md:hidden">
@@ -35,11 +35,11 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden bg-brand-dark shadow-xl border-t border-gray-800 absolute w-full left-0 z-50">
           <div className="px-4 pt-2 pb-6 space-y-1 sm:px-3 flex flex-col text-sm">
-            <Link to="/" onClick={() => setIsOpen(false)} className="text-gray-300 block px-3 py-3 border-b border-gray-800">Accueil</Link>
-            <Link to="/services" onClick={() => setIsOpen(false)} className="text-gray-300 block px-3 py-3 border-b border-gray-800">Services</Link>
-            <Link to="/solutions" onClick={() => setIsOpen(false)} className="text-gray-300 block px-3 py-3 border-b border-gray-800">Solutions</Link>
-            <Link to="/ressources" onClick={() => setIsOpen(false)} className="text-gray-300 block px-3 py-3 border-b border-gray-800">Ressources</Link>
-            <Link to="/contact" onClick={() => setIsOpen(false)} className="text-gray-300 block px-3 py-3 border-b border-gray-800">Contact</Link>
+            <NavLink to="/" onClick={() => setIsOpen(false)} className={({ isActive }) => `block px-3 py-3 border-b border-gray-800 transition-colors ${isActive ? 'text-brand-mint font-bold' : 'text-gray-300 hover:text-brand-mint'}`}>Accueil</NavLink>
+            <NavLink to="/services" onClick={() => setIsOpen(false)} className={({ isActive }) => `block px-3 py-3 border-b border-gray-800 transition-colors ${isActive ? 'text-brand-mint font-bold' : 'text-gray-300 hover:text-brand-mint'}`}>Services</NavLink>
+            <NavLink to="/solutions" onClick={() => setIsOpen(false)} className={({ isActive }) => `block px-3 py-3 border-b border-gray-800 transition-colors ${isActive ? 'text-brand-mint font-bold' : 'text-gray-300 hover:text-brand-mint'}`}>Solutions</NavLink>
+            <NavLink to="/ressources" onClick={() => setIsOpen(false)} className={({ isActive }) => `block px-3 py-3 border-b border-gray-800 transition-colors ${isActive ? 'text-brand-mint font-bold' : 'text-gray-300 hover:text-brand-mint'}`}>Ressources</NavLink>
+            <NavLink to="/contact" onClick={() => setIsOpen(false)} className={({ isActive }) => `block px-3 py-3 border-b border-gray-800 transition-colors ${isActive ? 'text-brand-mint font-bold' : 'text-gray-300 hover:text-brand-mint'}`}>Contact</NavLink>
           </div>
         </div>
       )}

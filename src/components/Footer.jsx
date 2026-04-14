@@ -42,9 +42,6 @@ const Footer = () => {
             <p className="text-gray-400 text-xs max-w-sm leading-relaxed">
               L'Intelligence Artificielle accessible à tous.
             </p>
-            <Link to="/admin/login" className="hover:text-brand-mint transition-colors inline-block text-[10px] uppercase font-bold tracking-widest text-[#62C298]/50 mt-2">
-              Accès Administration
-            </Link>
           </div>
 
           <div className="flex justify-start md:justify-end">
